@@ -1,0 +1,486 @@
+@charset "utf-8";
+
+/* ==========================================================================
+ politics_base.css　47政治のベース設定
+・ヘッダー
+・グローバルナビ
+・右カラム
+・フッター
+・2013年参院選パーツCSS
+
+========================================================================== */
+
+
+html{
+font-family:Helvetica,Arial, "MS UI Gothic","Segoe UI", Verdana,  sans-serif;
+}
+
+body{
+width: 100%;
+height: auto;
+/*background: #f4f5f7;*/
+background: #e6e9f0;
+}
+
+/** 蝓ｺ譛ｬ縺ｮ Link Color **/
+a { text-decoration : none;}
+a:link {color:#555555;text-decoration:none;}
+a:visited {color:#941D55;text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+
+ul,ol,li,dt,dd{ list-style : none; margin: 0; padding: 0;}
+img {
+/*max-width: 100%;*/
+vertical-align : middle;
+}
+
+#header{
+	width: 100%;
+	height: 140px;
+	position: relative;
+	/*border-bottom: 1px solid #eaeaea;*/
+	margin: 0 0 0 0;
+}
+#header .hgroup{
+	position: relative;
+	width: 980px;
+	height: 140px;
+	margin: 0 auto;
+	padding-top:10px;
+}
+#header .hgroup h1.logo_47politics,
+#header .hgroup p.logo_47politics{
+	position: absolute;
+	width: 160px;
+	height: 64px;
+	overflow: hidden;
+	top: 45px;
+	left: 80px;
+}
+#header .hgroup h1.logo_47politics a,
+#header .hgroup p.logo_47politics a{
+	display:block;
+	width: 160px;
+	height: 64px;
+	text-indent: -9999px;
+	background: url(http://img.47news.jp/news/politics/images/logo_47politics_sanin.png) 0 0 no-repeat;
+	overflow: hidden;
+}
+
+#header .hgroup .logo{
+	position: absolute;
+	width: 70px;
+	height: 90px;
+	top: 30px;
+	left: 0px;
+}
+#header .hgroup .TRform{
+	position: absolute;
+	width: 240px;
+	height: 30px;
+	top: 28px;
+	right: 0px;
+}
+#header .hgroup .topbana{
+	position: absolute;
+	width: 728px;
+	height: 90px;
+	background: #eeeeee;
+	top: 30px;
+	right: 0;
+}
+#header .hgroup .topbana p{
+	line-height: 88px;
+	text-align: center;
+	color: #999999;
+}
+
+/*-- #wrapper ----------------------------*/
+#wrapper{
+	position: relative;
+	width: 980px;
+	height: auto;
+	overflow: auto;
+	margin: 0 auto;
+	color: #545454;
+}
+
+
+/*-- #nav ----------------------------*/
+#nav{
+	position: relative;
+	width: 980px;
+	height: auto;
+	float: left;
+	margin: 0 0 20px 0;
+	/*background: #dee2eb;*/
+	background: #d0d4db;
+/*filter: alpha(opacity=70); -moz-opacity:0.7; opacity:0.7;*/
+	overflow: hidden;
+}
+
+#nav ul#list_cat{
+	position: relative;
+	width: 980px;
+	height: 45px;
+	padding-left: 20px;
+	top:0;
+	left: 0;
+}
+
+#nav ul#list_cat li{
+font-size: 14px;
+line-height: 20px;
+float: left;
+margin-top: 13px;
+padding-left: 28px;
+padding-right: 34px;
+background: url(http://img.47news.jp/news/politics/images/spr_icon.png) 0 0 no-repeat;
+text-indent: 20px;
+border-right: 1px solid #bbbbbb;
+border-left: 1px solid #e0e0e0;
+cursor:pointer;
+}
+#nav ul#list_cat li.cat01{background-position: 32px -490px;}
+#nav ul#list_cat li.cat02{background-position: 32px -640px;}
+#nav ul#list_cat li.cat03{background-position: 32px -520px;}
+#nav ul#list_cat li.cat04{background-position: 32px -550px;}
+#nav ul#list_cat li.cat05{background-position: 32px -580px;}
+#nav ul#list_cat li.cat06{background-position: 32px -670px; margin-right:0;}
+#nav ul#list_cat li.cat07{background-position: 32px -640px; }
+
+#nav ul#list_cat li.cat01{
+	border-left: 0px solid #e0e0e0;
+}
+#nav ul#list_cat li.cat06{
+	border-right: 0px solid #bbbbbb;
+}
+#nav ul#list_cat li a{
+	display: block;
+}
+
+/*-- 一覧(特集・新着ニュース・動画)用.pagenation----------------------------*/
+#container .pagenation{
+	width: 250px;
+	height: auto;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+#container .pagenation ul{
+	width: auto;
+	margin: 0 auto;
+}
+#container .pagenation li{
+	display: block;
+	float: left;
+	width: 20px;
+	height: 16px;
+	border-right: 1px solid #666;
+}
+#container .pagenation li.p_prev{
+	font-size: 12px;
+	width: 60px;
+}
+#container .pagenation li.p_next{
+	font-size: 12px;
+	width: 60px;
+	border-style: none;
+}
+#container .pagenation li a,
+#container .pagenation li a:visited{
+	font-size: 14px;
+	line-height: 16px;
+	color:#1D3994;
+}
+
+/*-- #right_column ----------------------------*/
+#right_column{
+	position: relative;
+	width: 300px;
+	height: auto;
+	float: left;
+	overflow: hidden;
+	padding-bottom: 50px;
+	margin: 0;
+	/*_margin: 0 0 0 -10px;*/
+}
+
+/*-- .adbox #facebook_api----------------------------*/
+.adbox,#facebook_api{
+	width: 300px;
+	height:auto;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+/*-- .sub_link----------------------------*/
+.sub_link{
+	position: relative;
+	width: 299px;
+	height: auto;
+	margin-bottom: 10px;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+}
+.sub_link h4{
+	width: 300px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	text-align: center;
+	border-bottom: 1px solid #9da6b5;
+	margin-bottom: 20px;
+}
+.sl01 h4{
+background: url(http://img.47news.jp/news/politics/images/spr_icon.png) 70px -751px no-repeat;
+text-indent: 20px;
+}
+
+.sl01 ul{
+	width: 280px;
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 10px;
+	margin:0 auto 10px;
+}
+.sl01 li{
+	display:block;
+	width: 120px;
+	height: 20px;
+	float: left;
+	padding-left: 20px;
+	margin-bottom: 10px;
+}
+.sl01 a{
+	display: block;
+	width: 120px;
+	height: 20px;
+	font-size: 14px;
+	line-height: 20px;
+	text-indent: 15px;
+	margin-bottom: 10px;
+	background: url(http://img.47news.jp/news/politics/images/spr_icon.png) 0 -711px no-repeat;
+}
+
+/*-- .partner_list ----------------------------*/
+.partner_list{
+clear: both;
+	position: relative;
+	width: 100%;
+	height: auto;
+	clear: both;
+	margin: 0 auto;
+	background: #fff;
+}
+.partner_list h6{
+
+width: 960px;
+background: url(http://img.47news.jp/news/politics/images/spr_icon.png) 0px -784px no-repeat;
+text-indent: 22px;
+line-height: 30px;
+padding-top: 10px;
+margin: 0 auto;
+}
+.partner_list ul{
+	clear:both;
+	width: 980px;
+	height: auto;
+	overflow: hidden;
+	padding: 0 0 20px 0;
+	margin: 0 auto;
+}
+
+/*.partner_list li{
+	display:block;
+	width: 80px;
+	height: 20px;
+	float: left;
+	padding-left: 10px;
+}*/
+
+.partner_list li{
+	display:block;
+	width: 90px;
+	height: 20px;
+	float: left;
+	padding-left: 10px;
+}
+
+/*
+.partner_list a{
+	color: #333;
+	display: block;
+	width: 80px;
+	height: 20px;
+	font-size: 10px;
+	line-height: 20px;
+}*/
+
+.partner_list a{
+	color: #333;
+	display: block;
+	width: 90px;
+	height: 20px;
+	font-size: 10px;
+	line-height: 20px;
+}
+
+
+
+/*-- #footer ----------------------------*/
+#footer{
+	clear: both;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 25px 0;
+	background: #323a45;
+}
+.footer_group{
+text-align: center;
+color: #fff;
+font-size: 10px;
+}
+#footer .footer_group p{
+	padding-bottom: 8px;
+}
+#footer .footer_group p a { text-decoration : none;}
+#footer .footer_group p a:link {color:#CCC;text-decoration:none;}
+#footer .footer_group p a:visited {color:#CCC;text-decoration:none;}
+#footer .footer_group p a:hover {text-decoration:underline;}
+
+/* 選挙用47政治ロゴ 増田追加 */
+.senkyoLogo{
+	width: 127px;
+	height: 61px;
+	margin: 33px 0 0 90px;
+}
+
+
+/* 右カラム選挙各党公約CSS 増田追加 */
+.manifest{
+	margin-top: 20px;
+	background: #f3f9ff;
+}
+
+.manifestTitle{
+	width: 300px!important;
+	height: 36px!important;
+	background: url(http://cms7.47news.jp/news/politics/election/sanin2013/images/manifestBg.png) no-repeat!important;
+	text-align: center!important;
+	border-bottom: none!important;
+	color: white!important;
+	}
+	
+.manifestTitle2{
+	background: url(http://cms7.47news.jp/news/politics/election/sanin2013/images/manifest_icon.png) no-repeat;
+	background-position: 100px 5px;
+	}
+
+.party{
+	background: url(http://cms7.47news.jp/news/politics/election/sanin2013/images/pointer.png) no-repeat!important;
+	background-position: 1px 4px!important;
+}
+
+
+/* 開票日当日グラフ用CSS */
+.electgraphBox{
+	width: 980px;
+	margin:30px auto 20px;
+	background: #ffffff;
+	clear: both;
+	border-radius: 4px;
+       padding-bottom: 20px;
+	box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+	}
+	
+.flashBox{
+	width: 800px;
+	margin: auto;
+	padding-top: 20px;	
+}
+
+
+#electContainer{
+	width: 980px;
+	clear: both;
+	margin: 30px 0 50px 0;
+}
+
+.electionBox{
+	padding: 10px;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.flashBox{
+	width: 800px;
+	padding:20px 0 20px 0;
+	margin: auto;
+}
+
+.graphBox1{
+	width: 610px;
+	margin-top: 30px;
+	padding-left: 10px;
+	float: left;
+}
+
+.graphBox2{
+	width: 300px;
+	margin-top: 30px;
+	padding-right: 7px;
+	float: right;
+}
+
+.graphBox3{
+	width: 300px;
+	padding-right: 7px;
+	float: right;
+	margin-top: -100px;
+}
+
+
+.electBackground{
+	background-color: #e8e8e8;
+	padding: 10px;
+	margin-bottom: 30px;
+	width: 100%;
+	}
+
+.electTitile{
+	font-size: 20px;
+	text-align: center;
+	color:　#3c80ff;
+}
+
+
+.electdetailBtn{
+	width: 195px;
+	margin: auto;
+	background: #3e94ff;
+	padding: 10px;
+	-webkit-border-radius: 4px;
+    　border-radius: 4px;
+    　display: block;
+}
+
+
+.electdetailTxt{
+	text-align: center;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+.electdetailBtn .electdetailTxt a{
+	color: white;
+}
+
+.electdetailBtn .electdetailTxt a:hover{
+    display: block;
+    text-decoration:underline;
+}
+ 

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block sitetitle %}
+写真 - 世論調査HTML作成ツール
+{% endblock %}
+
+{% block page-title %}写真{% endblock %}
+
+{% block main-col %}
+	{% if message %}
+		<p class='alert'>{{message}}</p>
+	{% endif %}
+	<div class='explain'>
+	<a href='http://cms7.47news.jp/mt-cgi/mt.cgi' target='_blank'>47政治のMTへのリンク</a>へ行って、画像のアップロードをしてください。<br>
+	「47政治 ネット選挙トレンド分析」というブログが、世論調査のブログです。<br>
+	その後、画像のURLをこちらに入力してください。<br>
+	日付は、その写真が撮られた日付ではなく、年表中の画像上端に当たる部分の日付です。<br>
+	何度か微調整しつつ、画像の上下方向の位置を決めてください。<br>
+	 <br>
+	47政治のMTのIDは>>><span><b>47seiji_tmpl</b></span><br>
+	PWは　メディアラボ担当者か、デジタル推進局担当者までお問い合わせください。<br>
+	<hr>
+	
+	</div>
+	
+	
+	<form name='newphoto' method=POST action='/photo'>
+		<table class='table'>
+			<tr class='table-title'>
+				<th>画像URL</th><th>日付（位置）</th><th>タイトル</th><th>画像表示幅(px)</th><th>登録</th>
+			</tr>
+			<td><input type="link" name='photo_url'></td>
+			<td><input type="date" name='date'></td>
+			<td><input type="text" name='photo_title'></td>
+			<td><input type="number" name='width'></td>
+			<td><input type="submit" value="登録">
+		</table>
+	</form>
+	
+	<hr />
+	<table class ='table photolist'>
+		<tr class='table-title photo-title'>
+			<th>写真</th>
+			<th>日付（位置）</th>
+			<th>タイトル</th>
+			<th>幅</th>
+			<th>日付更新</th>
+			<th>削除</th>
+		</tr>
+	{% for photo in photos %}
+		<tr class='photoitem'>
+			<form name="s{{photo.key.id}}" method="POST" action='/photo'>
+				<input type="hidden" name="mid" value='{{photo.key.id}}'>
+			<td class='photo-itself'><img src="{{photo.img_url}}" {% if photo.width %}width="{{photo.width}}px"{% endif %} alt="{{photo.title}}" /></td>
+			<td class='photo-date'><input type='date' name='date' value='{{photo.date|date:"Y-m-d"}}'/></td>
+			<td class='photo-title'>{{photo.title}}</td>
+			<td class='photo-width'>{% if photo.width %}{{photo.width}}px{% endif %}</td>
+			<td>
+				<a href="javascript:document.s{{photo.key.id}}.submit();">日付更新</a>
+			</td>
+			<td><a href='/photo?delitem={{photo.key.id}}'>削除</a></td>
+			</form>		
+		</tr>
+	{% endfor %}
+	</table>
+	
+{% endblock %}

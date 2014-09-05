@@ -1,0 +1,227 @@
+{%block top_menu%}{% endblock %}
+{% block preSP47 %}
+
+<!doctype html>
+<html lang="ja-JP">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<title>内閣支持率の推移 - スマホ版 - 47NEWS（よんななニュース）</title>
+
+<meta name="description" content="　２０１２年８月１０日夜、大阪市天王寺区役所の３階講堂で、就任間もない区長 水谷翔太 （２９）は区民１００人を前に自ら企画した２７分間の「所信表明演説」に臨んだ。「今までの行政の常識を打ち砕く。主役は" />
+<meta name="keywords" content="47NEWS,ニュース,政治,政府,首相,国会" />
+
+<!--test-->
+
+<script type="text/javascript" src="http://img.47news.jp/js/jquery-1.9.0.min.js"></script>
+
+<link href="http://img.47news.jp/smp/common/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://img.47news.jp/smp/common/css/politics.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/header.js"></script>
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/common.js"></script>
+
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/flipsnap.js"></script>
+
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/jquery.easing.js"></script>
+<!-- Politics -->
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/politics.js"></script>
+
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/option.js"></script>
+
+</head>
+<body id="politics">
+
+
+
+<!-- メインコンテンツ -->
+<div id="warp">
+
+<header>
+	<div id="logo" class="left">
+		<p class="tit_logo"><a href="http://www.47news.jp/smp/news/politics/"><img alt="47政治｜参院選2013" src="http://www.47news.jp/news/politics/smp/images/sanin_logo.gif" width="79" height="37" /></a></p><p class="smp_icon"><a href="http://www.47news.jp/smp/"><img src="http://img.47news.jp/smp/common/images/header/header_logo.png" width="26" height="26"></a></p>
+	</div>
+	<div id="searchArea" class="right">
+		<input type="text" name="search" class="inner" placeholder="キーワード入力" size="14" id="inputArea"><button type="button" onclick="jumpSearchPoliticsPage()"><img src="http://img.47news.jp/smp/images/politics/button_search.gif" alt="検索" width="36" height="25"></button>
+	</div>
+</header>
+
+<!-- 政治 グローバルメニュー -->
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/politics/global_menu.js"></script>
+
+<!-- 特集 -->
+<div class="sectionTitle bgPink">
+  <p>■&nbsp;特集</p>
+</div>
+
+<div id="detail">
+<div class="detailHeader">
+<h1 class="descriptionTitle">【内閣支持率の推移】</h1>
+<div class="detailDate">2014/05/09&nbsp;17:04【共同通信】</div>
+</div>
+
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/under_title.js"></script>
+
+<div class="ditailDescription">
+{% endblock %}
+{% block contents %}
+<p>　内閣支持率は、政治と有権者の関係を表す大切な指標です。
+共同通信は半世紀にわたる内閣支持率のデータを蓄積しており、その一部である２００７年からのデータをまとめました。</p>
+<div style="position:relative;width:100%;padding-bottom:10px; padding-top:5px;height:{{scale.height}}px;">
+
+ <style type="text/css">
+    .nenpyolink {position:absolute; color:#468;left:20px; font-size:6pt;}
+    .nenpyolink:hover {color:#eee;}
+    .nenpyolink a {font-size:11pt; padding-left:5px;}
+ </style>
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="100%" height="{{scale.height}}" viewBox="0 0 {{scale.width}} {{scale.height}}" preserveAspectRatio='none'>
+		<rect x="5" y="7" width="8" height="12" fill =rgba(0,150,240,0.5) />
+		<rect x="45" y="7" width="8" height="12" fill =rgba(140,140,14,0.5) />
+		<rect x="115" y="7" width="8" height="12" fill =rgba(200,80,20,0.5) />
+		<text x="15" y="15" fill="#555" font-size="7">支持する</text>
+		<text x="55" y="15" fill="#555" font-size="7">わからない/無回答</text>
+		<text x="125" y="15" fill="#555" font-size="7">支持しない</text>
+		
+		<text x="{{scale.20}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">20</tspan></text>
+		<text x="{{scale.40}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">40</tspan></text>
+		<text x="{{scale.60}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">60</tspan></text>
+		<text x="{{scale.80}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">80</tspan></text>
+		<text x="{{scale.endline_w}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-10" dy = "-5" font-size="12">100</tspan><tspan dx = "-8" dy="10" font-size="10">(%)</tspan></text>
+		<text x="{{scale.startline}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-8" dy = "-5" font-size="12">0</tspan></text>
+		
+		<line stroke= "#779" x1="{{scale.20}}" y1="{{scale.startline_hex}}" x2={{scale.20}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.40}}" y1="{{scale.startline_hex}}" x2={{scale.40}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.60}}" y1="{{scale.startline_hex}}" x2={{scale.60}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.80}}" y1="{{scale.startline_hex}}" x2={{scale.80}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.startline}}" y1="{{scale.startline_hex}}" x2={{scale.startline}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.endline_w}}" y1="{{scale.startline_hex}}" x2={{scale.endline_w}} y2="{{scale.endline_hex}}" />
+		
+	<polygon stroke =rgba(0,120,200,0) fill =rgba(0,150,240,0.5) points="{{scale.startline}},{{scale.startline_h}} {% for data in svga %}{{data.0}},{{data.1}} {% endfor %}{{scale.startline}},{{scale.endline_h}}" />
+	<polyline stroke =rgba(0,120,200,0.5) stroke-width="3" fill="none" points="{% for data in svga %}{{data.0}},{{data.1}} {% endfor %}" />
+	<polygon stroke =rgba(100,100,10,0) fill =rgba(140,140,14,0.5) points ="{% for data in svgd %}{{data.0}},{{data.1}} {% endfor %}{% for data in svga_reverse %}{{data.0}},{{data.1}} {% endfor %}" />
+	<polygon stroke =rgba(100,40,10,0.2) fill =rgba(200,80,20,0.5) points ="{{scale.endline_w}},{{scale.startline_h}} {{scale.endline_w}},{{scale.endline_h}} {% for data in svgd_reverse %}{{data.0}},{{data.1}} {% endfor %}" />
+	
+		{% for gov in go_list %}
+			{% if not gov.now_flg %}<line stroke= "#fff" stroke-width="5" x1="{{scale.startline}}" y1="{{gov.pixel.1}}" x2="{{scale.endline_w}}" y2="{{gov.pixel.1}}" />{% endif %}
+			<text x="{{scale.40}}" y="{{gov.pixel.2}}" fill=rgba(255,255,255,0.8) font-size="60" writing-mode="tb" letter-spacing='30' font-family='serif'>
+				<tspan dx="20" dy="-100">{{gov.name}}</tspan>
+			</text>
+		{% endfor %}
+	
+
+    </svg>
+{% for hl in ht %}
+	<span class="nenpyolink" style="top:{{hl.pixel}}px;">{{hl.date|date:"y/m/d"}}<a href="{{hl.url}}">{{hl.title}}</a></span>
+{% endfor %}
+</div>
+<p>
+内閣支持率は、政治と有権者の関係を表す大切な指標です。<br>
+共同通信は半世紀にわたる内閣支持率のデータを蓄積しており、その一部である２００７年からの結果をまとめました。
+</p>
+{% endblock %}
+
+{% block sufix47SP %}
+<!-- ソーシャル プラグイン -->
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/sns_detail.js"></script>
+
+</div>
+
+<div class="moreButton">
+<a href="http://www.47news.jp/smp/news/politics/archives_main.html">特集一覧に戻る</a>
+</div>
+
+<div class="moreButton">
+<a href="http://www.47news.jp/smp/news/politics/">47政治に戻る</a>
+</div>
+
+<!-- Ad Area1 -->
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/ad_area1_article_ajax.js"></script>
+
+<!-- 関連ニュース -->
+<div id="relatedNews">
+<div class="sectionTitle">
+<p class="title">■&nbsp;同じカテゴリーのニュース</p>
+</div>
+
+<div class="newslist">
+<ul>
+
+<li>
+<p class="title"><a href="http://www.47news.jp/smp/news/politics/201405/253310.html">【連載　維新現象は終わるのか】＜第１部「支える人々」⑨＞カラス駆除したいでしょ　</a></p>
+<p class="date">2014/05/09&nbsp;17:04【共同通信】</p>
+</li>
+<li>
+<p class="title"><a href="http://www.47news.jp/smp/news/politics/201405/253154.html">【連載　維新現象は終わるのか】＜第１部「支える人々」⑧＞ あこがれ、本人に挑戦状</a></p>
+<p class="date">2014/05/02&nbsp;20:54【共同通信】</p>
+</li>
+<li>
+<p class="title"><a href="http://www.47news.jp/smp/news/politics/201404/253062.html">【連載　維新現象は終わるのか】＜第１部「支える人々」⑦＞地域再生のリーダー　「自</a></p>
+<p class="date">2014/04/30&nbsp;14:13【共同通信】</p>
+</li>
+<li>
+<p class="title"><a href="http://www.47news.jp/smp/news/politics/201404/252966.html">【連載　維新現象は終わるのか】＜第１部「支える人々」⑥＞ 副業は「脱自虐」運動　</a></p>
+<p class="date">2014/04/25&nbsp;17:12【共同通信】</p>
+</li>
+<li>
+<p class="title"><a href="http://www.47news.jp/smp/news/politics/201404/252964.html">【連載　維新現象は終わるのか】＜第１部「支える人々」⑤＞ 「強い日本」の夢託す　</a></p>
+<p class="date">2014/04/22&nbsp;17:03【共同通信】</p>
+</li>
+
+
+</ul>
+</div>
+
+</div>
+
+
+<!-- Ranking -->
+<div id="TopNews_ranking">
+<div class="sectionTitle">
+<p class="title">■&nbsp;アクセスランキング</p>
+</div>
+<script type="text/javascript" src="http://img.47news.jp/smp/js/smp_ranking.js"></script>
+</div>
+
+<!-- Google Ads 2 -->
+<div class="ads2">
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/google_index_article2.js"></script>
+</div>
+
+<!-- facebook Like Box -->
+<div id="facebook_api" >
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-send="false" data-width="300" data-show-faces="true"></div>
+</div>
+
+<!-- Page Top -->
+<div id="pc_link">
+<div class="left">
+<img src="http://img.47news.jp/smp/common/images/button_login_grayout.jpg" alt="ログイン" width="65" height="25">
+</div>
+<div class="right">
+<a href="#">
+<img src="http://img.47news.jp/smp/images/politics/up_arrow.gif" alt="Page Top" width="32" height="32"></a>
+</div>
+</div>
+
+<!-- フッター -->
+<footer>
+<script type="text/javascript" src="http://img.47news.jp/smp/common/js/footer_link.js"></script>
+<p id="copy">Copyright &copy; 2006 - 2014 Press Net Japan Co.,Ltd.<br>Powered by Kyodo News Media Lab<br>All Rights Reserved.<p>
+</footer>
+
+</div>
+
+</body>
+</html>
+{% endblock %}

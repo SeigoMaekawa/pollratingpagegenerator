@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block sitetitle %}
+グラフ作成 - 世論調査HTML作成ツール
+{% endblock %}
+
+{% block page-title %}支持率グラフ作成{% endblock %}
+
+{% block main-col %}
+	{% if message %}
+		<p class='alert'>{{message}}</p>
+	{% endif %}
+	<form name='newentry' method=POST action='/graphPost'>
+	<table class='table'>
+		<tr class='table-title'>
+			<td>日時</td><td>支持率</td><td>わからない</td><td>不支持</td><td>登録</td>
+		</tr>
+		<tr>
+			<td><input type="date" name='date'></td>
+			<td><input type="number" step="0.1" name='approval_rate'></td>
+			<td><input type="number" step="0.1" name='unknown_rate'></td>
+			<td><input type="number" step="0.1" name='disapproval_rate'></td>
+			<td><input type="submit" value="登録">
+		</tr>
+	</table>
+	</form>
+	<hr />
+	<table class='table'>
+		<tr class='table-title'>
+			<td>日時</td><td>支持率</td><td>わからない</td><td>不支持</td><td>登録</td>
+		</tr>
+		{% for data in datas %}
+		<tr>
+			<td>{{data.date|date:"Y-m-d"}}</td>
+			<td>{{data.approval_rate}}</td>
+			<td>{{data.unknown_rate}}</td>
+			<td>{{data.disapproval_rate}}</td>
+			<td>
+				<form name="s{{data.key.id}}" method="POST" action='/graph'>
+					<input type="hidden" name="mid" value='{{data.key.id}}'>
+				</form>
+				<a href="javascript:document.s{{data.key.id}}.submit();">削除</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	
+{%endblock%}

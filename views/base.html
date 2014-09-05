@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block site-title %}世論調査HTML作成ツール{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<body>
+	<header>
+		
+		
+		<div id="mainmenu">
+		<div id ='top-page' class ='menu'><a href='/'>TOPへ</a></div>
+		<div class ='menu'><a href='/graph'>グラフ入力</a></div>
+		<div class ='menu'><a href='/HistoricalTable'>年表入力</a></div>
+		<div class ='menu'><a href='/government'>政権</a></div>
+		<div class ='menu'><a href='/photo'>写真入力</a></div>
+		{% block sign-inout %}
+		<div id="user-name" class ='menu'>{{nickname}}</div>
+		<div id="logout_bt" class ='menu'><a href="{{logout_url}}">ログアウト</a></div>
+		{% endblock %}
+		</div>
+		
+		
+	</header>
+	<div id="container">
+    <div id="center-col">
+    	<h1>{% block page-title %}世論調査HTMLページ作成ツール{% endblock %}</h1>
+    	{% block main-col %}
+    	<div class='group'>
+    	<h2 class='h2'>データ入力</h2>
+    	<a href='/graph'>
+    		<div class='pagelink group'>グラフデータ入力</div>
+    	</a>
+    	<a href='/HistoricalTable'>
+    		<div class='pagelink group'>年表データ入力</div>
+    	</a>
+		<a href='/government'>
+			<div class='pagelink group'>政権設定</div>
+		</a>
+   		<a href='/photo'>
+   			<div class='pagelink group'>PC年表用写真</div>
+   		</a>
+   		</div>
+   		<div class='group'>
+   			<h2 class='h2'>グラフ生成</h2>
+   		<!-- 
+   		<a href='/generate'>
+   			<div class='pagelink group'>グラフ出力</div>
+   		</a>
+   		 -->
+   		<a href='/generate?template=47PC.html'>
+   			<div class='pagelink group'>47NEWS PCサイトモード</div>
+   		</a>
+   		<a href='/generate?template=copypc.html'>
+   			<div class='pagelink group'>PCのコピー用テキスト</div>
+   		</a>
+   		<a href='/generate?template=47SP.html'>
+   			<div class='pagelink group'>47NEWS SPサイトモード</div>
+   		</a>
+   		<a href='/generate?template=copysp.html'>
+   			<div class='pagelink group'>SPのコピー用テキスト</div>
+   		</a>
+   		</div>
+    	{% endblock %}
+    </div>
+    <div id="second-col">
+    	{% block 2ndcol %}
+    	{% endblock %}
+    </div>
+    
+    </div>
+    <footer>copyrights Kyodonews</footer>    
+
+</body>
+</html>

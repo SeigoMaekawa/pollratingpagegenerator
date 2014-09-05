@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block sitetitle %}
+出力結果 - 世論調査HTML作成ツール
+{% endblock %}
+
+{% block page-title %}出力結果{% endblock %}
+
+{% block main-col %}
+	{% if message %}
+		<p class='alert'>{{message}}</p>
+	{% endif %}
+
+<div id='grapharea'>
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="{{scale.width}}" height="{{scale.height}}">
+		<rect x="30" y="7" width="12" height="16" fill =rgba(0,150,240,0.5) />
+		<rect x="30" y="27" width="12" height="16" fill =rgba(140,140,14,0.5) />
+		<rect x="30" y="47" width="12" height="16" fill =rgba(200,80,20,0.5) />
+		<text x="52" y="20" fill="#555" font-size="12">支持する</text>
+		<text x="52" y="40" fill="#555" font-size="12">わからない/無回答</text>
+		<text x="52" y="60" fill="#555" font-size="12">支持しない</text>
+		
+		<text x="{{scale.20}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">20</tspan></text>
+		<text x="{{scale.40}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">40</tspan></text>
+		<text x="{{scale.60}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">60</tspan></text>
+		<text x="{{scale.80}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">80</tspan></text>
+		<text x="{{scale.endline_w}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">100</tspan><tspan dy="-10" font-size="10">(%)</tspan></text>
+		<text x="{{scale.startline}}" y="{{scale.startline_hex}}" fill="#555"><tspan dx="-5" dy = "-5" font-size="12">0</tspan></text>
+		
+		<line stroke= "#779" x1="{{scale.20}}" y1="{{scale.startline_hex}}" x2={{scale.20}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.40}}" y1="{{scale.startline_hex}}" x2={{scale.40}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.60}}" y1="{{scale.startline_hex}}" x2={{scale.60}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.80}}" y1="{{scale.startline_hex}}" x2={{scale.80}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.startline}}" y1="{{scale.startline_hex}}" x2={{scale.startline}} y2="{{scale.endline_hex}}" />
+		<line stroke= "#779" x1="{{scale.endline_w}}" y1="{{scale.startline_hex}}" x2={{scale.endline_w}} y2="{{scale.endline_hex}}" />
+		
+	<polygon stroke =rgba(0,120,200,0) fill =rgba(0,150,240,0.5) points="{{scale.startline}},{{scale.startline_h}} {% for data in svga %}{{data.0}},{{data.1}} {% endfor %}{{scale.startline}},{{scale.endline_h}}" />
+	<polyline stroke =rgba(0,120,200,0.5) stroke-width="3" fill="none" points="{% for data in svga %}{{data.0}},{{data.1}} {% endfor %}" />
+	<polygon stroke =rgba(100,100,10,0) fill =rgba(140,140,14,0.5) points ="{% for data in svgd %}{{data.0}},{{data.1}} {% endfor %}{% for data in svga_reverse %}{{data.0}},{{data.1}} {% endfor %}" />
+	<polygon stroke =rgba(100,40,10,0.2) fill =rgba(200,80,20,0.5) points ="{{scale.endline_w}},{{scale.startline_h}} {{scale.endline_w}},{{scale.endline_h}} {% for data in svgd_reverse %}{{data.0}},{{data.1}} {% endfor %}" />
+	
+		{% for gov in go_list %}
+			<line stroke= "#fff" stroke-width="3" x1="{{scale.startline}}" y1="{{gov.pixel.0}}" x2="{{scale.endline_w}}" y2="{{gov.pixel.0}}" />
+			<text x="{{scale.20}}" y="{{gov.pixel.2}}" fill="#fff" font-size="24">{{gov.name}}<tspan font-size="16">政権</text>
+		{% endfor %}
+	
+	
+        {% for month in month_pos %}
+        	<text x="{{scale.startline_ht}}" y="{{month.1}}" font-size="10">{{month.0}}</text>
+        {% endfor %}
+    </svg>
+</div>
+<div id='htable'>
+        {% for hl in ht %}
+        	<div class="history" style="top:{{hl.pixel}}px;"><a href="{{hl.url}}">{{hl.title}}</a></div>
+        {% endfor %}
+        
+        {% for photo in photos %}
+			<img class='photo' src='{{photo.img_url}}' {% if photo.width %}width='{{photo.width}}px'{% endif %} alt='{{photo.title}}' style='top:{{photo.pixel}}px;'/>
+		{% endfor %}
+</div>
+
+{%endblock%}

@@ -1,0 +1,68 @@
+{% extends '47PC.html' %}
+
+{% block top_menu %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PC用コード　コピー　-世論調査HTML作成ツール</title>
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<body>
+	<header>
+		
+		
+		<div id="mainmenu">
+		<div id ='top-page' class ='menu'><a href='/'>TOPへ</a></div>
+		<div class ='menu'><a href='/graph'>グラフ入力</a></div>
+		<div class ='menu'><a href='/HistoricalTable'>年表入力</a></div>
+		<div class ='menu'><a href='/government'>政権</a></div>
+		<div class ='menu'><a href='/photo'>写真入力</a></div>
+		{% block sign-inout %}
+		<div id="user-name" class ='menu'>{{nickname}}</div>
+		<div id="logout_bt" class ='menu'><a href="{{logout_url}}">ログアウト</a></div>
+		{% endblock %}
+		</div>
+		
+		
+	</header>
+{% endblock %}
+
+{% block prePC47 %}
+<div id='text-to-copy'>
+<div class='explain'>
+	<a href='http://cms7.47news.jp/mt-cgi/mt.cgi' target='_blank'>47政治のMTへのリンク</a>へ行って、エントリーを作成してください。<br>
+	「47政治 ネット選挙トレンド分析」というブログが、世論調査のブログです。<br>
+	<b>カテゴリー</b>が重要で、本番系へ反映させるカテゴリーは<br>
+	<ul>
+	<li>PC本番用　：　内閣支持率の推移</li>
+	<li>PCテスト用　：　【テスト】内閣支持率の推移</li>
+	<li>スマホ本番用　：　SP内閣支持率の推移</li>
+	<li>スマホテスト用　：　【テスト】SP内閣支持率の推移</li>
+	</ul>
+	<br>
+	です。
+	<br>
+	<p>47政治のMTのIDは>>><span><b>47seiji_tmpl</b></span><br>
+	PWは　メディアラボ担当者か、デジタル推進局担当者までお問い合わせください。<br></p>
+	<p>テストのエントリーは、自動では反映されません。テンプレートの「PC：詳細(内閣支持率の推移)*テスト*」か<br>
+	「smp：内閣支持率の推移*テスト*」を「保存と再構築」して反映させてください。<br></p>
+	確認用URLは、
+	<ul>
+	<li>PC本番用　：　<a href='http://cms7.47news.jp/news/politics/trend/approval_rate.html' target='_blank'>http://cms7.47news.jp/news/politics/trend/approval_rate.html</a></li>
+	<li>PCテスト用　：　<a href='http://cms7.47news.jp/news/politics/trend/index_test201407.html' target='_blank'>http://cms7.47news.jp/news/politics/trend/index_test201407.html</a></li>
+	<li>スマホ本番用　：　<a href='http://cms7.47news.jp/smp/news/politics/trend/approval_rate.html' target='_blank'>http://cms7.47news.jp/smp/news/politics/trend/approval_rate.html</a></li>
+	<li>スマホテスト用　：　<a href='http://cms7.47news.jp/smp/news/politics/trend/index_test201407.html' target='_blank'>http://cms7.47news.jp/smp/news/politics/trend/index_test201407.html</a></li>
+	</ul>
+	<br>
+	<p>47ニュースのセキュリティポリシーで、共同通信の<span class='font-large'><b>社内LAN</b></span>（プロキシなし）からのみ、MTへの反映などができます。</p>
+	<hr>
+	
+</div>
+<textarea rows='20' cols='100'>
+{% endblock %}
+
+{% block sufix47PC %}
+</textarea>
+</div>
+</body></html>
+{%endblock%}

@@ -1,0 +1,1 @@
+if (window.CM8Function) window.CM8Function();

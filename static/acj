@@ -1,0 +1,25 @@
+OX_7909049018({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://servedby.openxmarket.jp/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://jp-u.openx.net/w/1.0/pd?plm=1&ph=b5df81f9413b9e95ee35f8fd2dbf309ec9d0322f",
+    "adunits" : [
+      {
+        "auid":"268815",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "width":"728",
+            "height":"90",
+            "html":"<script type=\"text/javascript\">\n    var amp_sct = '2';\n    var amp_med = '1167';\n    var amp_site = '488';\n    var amp_frame = '12664';\n    var amp_iframe = '0';\n    var amp_height = '90';\n    var amp_width = '728';\n    var amp_type = '0';\n    var amp_rgl = '2';\n    var amp_rurl = document.referrer;\n    var amp_send = location.protocol + '//ads.adjust-net.jp/adserver/ad/ads.js';\n    document.write(\"<scr\" + \"ipt language='javascript' src='\" + amp_send + \"'></scr\" + \"ipt>\");\n</script>\n<noscript>\n    <iframe src=\"https://ads.adjust-net.jp/adserver/ads?med=1167&site=488&frame=12664&height=90&width=728&type=0&sct=2&rgl=2\" scrolling=\"no\" height=\"90\" width=\"728\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>\n</noscript>\n",
+            "target":"_blank",
+            "ts":"1fHJhaWQ9YjA2YWY3NmItYmJkZS00MzJiLTkzMjctYTA5NjhiNzY5MDM5fHNpZD01NDA3MnxhdW09RE1JRC5XRUJ8YXVpZD0yNjg4MTV8cmlkPTAyNWE2YzU4LTkzYWQtNDI2OS1iY2QxLTBhYjAxMzg3YjkwOXxwYz1KUFl8dXI9cVRUMmNjWFFSd3xydD0xMzkzMjk5NzEzfHB1Yj02ODIwOA",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\">\n    var amp_sct = '2';\n    var amp_med = '1167';\n    var amp_site = '488';\n    var amp_frame = '12664';\n    var amp_iframe = '0';\n    var amp_height = '90';\n    var amp_width = '728';\n    var amp_type = '0';\n    var amp_rgl = '2';\n    var amp_rurl = document.referrer;\n    var amp_send = location.protocol + '//ads.adjust-net.jp/adserver/ad/ads.js';\n    document.write(\"<scr\" + \"ipt language='javascript' src='\" + amp_send + \"'></scr\" + \"ipt>\");\n</script>\n<noscript>\n    <iframe src=\"https://ads.adjust-net.jp/adserver/ads?med=1167&site=488&frame=12664&height=90&width=728&type=0&sct=2&rgl=2\" scrolling=\"no\" height=\"90\" width=\"728\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>\n</noscript>\n"
+          }
+        ]
+      }
+    ]
+  }
+});

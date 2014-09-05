@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+
+header {
+	width:100%;
+}
+
+footer{
+	text-align:center;
+	width:100%;
+	padding: 5px;
+	background-color:#add8e6;
+}
+
+#container{
+	padding:30px;
+}
+
+
+#mainmenu {
+	border-bottom:1px solid #bbbbbb;
+	text-align:right;
+	padding: 7px;
+	background-color:#add8e6;
+}
+
+#mainmenu:after {
+	clear:both;
+}
+
+.menu{
+	display: inline;
+	padding: 5px;
+}
+
+
+
+.history{
+	position:absolute;
+}
+
+.photo{
+	position:absolute;
+	right:15px;
+}
+
+#htable {
+	position:relative;
+	float:left;
+	width: 400px;
+}
+
+#grapharea{
+	float:left;
+}
+
+#text-to-copy, footer{
+	clear:both;
+}
+
+
+.alert{
+	font-size:25px;
+	
+}
+
+.group{
+	padding:10px 10px 10px 10px;
+	border: 1px solid #999999;
+	border-radius: 5px;
+	width: 40%;
+	margin:5px;
+}
+
+.pagelink{
+	width:80%;
+	font-size:1.2em;
+}
+
+.pagelink:hover{
+	background-color:#f0ffff;
+}
+
+.table, .table th, .table td {
+	border:1px solid #999999;
+	border-collapse:collapse;
+	padding: 5px;
+}
+
+.table-title td, .table-title th{
+	color:#ffffff;
+	background-color:#505050;
+}
+
+.explain{
+	padding: 20px;
+	color: #1f3134;
+}
+
+.h2 {
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+.font-large{
+	font-size:1.1em;
+}

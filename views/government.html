@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block sitetitle %}
+政権 - 世論調査HTML作成ツール
+{% endblock %}
+
+{% block page-title %}政権{% endblock %}
+
+{% block main-col %}
+	{% if message %}
+		<p class='alert'>{{message}}</p>
+	{% endif %}
+	<form name='newentry' method=POST action='/government'>
+	<table class='table'>
+		<tr class='table-title'>
+			<td>政権名</td><td>発足日</td><td>終了日</td><td>現政権</td><td>登録</td>
+		</tr>
+		<tr>
+			<td><input type="text" name='go_name'></td>
+			<td><input type="date" name='begin'></td>
+			<td><input type="number" name='end'></td>
+			<td><input type="checkbox" name='now_flg'></td>
+			<td><input type="submit" value="登録">
+		</tr>
+	</table>
+	</form>
+	<hr />
+	<table class='table'>
+		<tr class='table-title'>
+			<th>政権名</th><th>発足日</th><th>終了日</th><th>現政権</th><th>削除</th>
+		</tr>
+		{% for data in datas %}
+		<tr>
+			<td>{{data.name}}</td>
+			<td>{{data.begin|date:"Y-m-d"}}</td>
+			<td>{% if data.now_flg %}現政権{% else %}{{data.end|date:"Y-m-d"}}{% endif %}</td>
+			<td>{{data.now_flg}}</td>
+			<td>
+				<form name="s{{data.key.id}}" method="POST" action='/government'>
+					<input type="hidden" name="mid" value='{{data.key.id}}'>
+				</form>
+				<a href="javascript:document.s{{data.key.id}}.submit();">削除</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	
+{%endblock%}

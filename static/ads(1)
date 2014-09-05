@@ -1,0 +1,40 @@
+var plugin = (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"]) ? navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin : 0;
+
+var winIE = navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0 && navigator.userAgent.indexOf("Windows")>=0;
+
+var ff3 = navigator.userAgent && navigator.userAgent.indexOf("Firefox/3")>=0;
+
+if ( plugin ) {
+    if (ff3 && parseInt(plugin.description.match(/\d+\.\d+/)) == 8) {
+        plugin = false;
+    } else {
+        plugin = parseInt(plugin.description.match(/\d+\.\d+/)) >= 6;
+    }
+} else if(winIE) {
+    document.write('<SCR' + 'IPT LANGUAGE=VBScript> \n');
+    document.write('on error resume next \n');
+    document.write('plugin = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.6")))\n');
+    document.write('</SCR' + 'IPT> \n');
+}
+
+if (plugin) {
+    document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"');
+    document.write('codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5" width="300" height="250">');
+    document.write('<param name="movie" value="http://cre.adjust-net.jp/pc/1e/96/2004511.swf">');
+    document.write('<param name="play" value="true"><param name="loop" value="true"><param name="menu" value="false">');
+    document.write('<param name="quality" value="high"><param name="scale" value="showall">');
+    document.write('<param name="align" value="t"><param name="salign" value="t">');
+    document.write('<param name="flashvars" value="clickTAG=http%3A%2F%2Fads.adjust-net.jp%2Fadfrontserver%2Fclick%3Fsi%3D81b4e24e8a6b483481c2e7f5c6df24f7%26rv%3D2%26ard%3Dlv%3A3%7Cst%3A488%7Cfr%3A2000416%7Cfp%3A1%7Cpl%3A2000949%7Cmn%3A2003399%7Ccv%3A2014035%7Cat%3A1%7Cast%3A4%7Cnuf%3A0%7Cui%3A2deafc2f25d0494cb70d1060aa27577d%7Coof%3A0%7Ctt%3A1%7Cjsf%3A1%7Cgi%3A3%7Cmgi%3A0%7Cbd%3A2006840%7Cai%3A24%7Cmai%3A0%7Csm%3AD10900_12365%2CD10900_12377%2CD10900_12778%2CD10900_12806%7Cmsm%3A%7Cpc%3A%7Cmpc%3A%7Cft%3A9%7Cdm%3A%7Cmdm%3A%7Clm%3A%7Cmlm%3A%7Casm%3A%7Cmasm%3A%7Cafsd%3Aocn.ne.jp%7Cafsreg%3A4%7Cafsh%3A783%7Cafsw%3A1375%7Cafsifr%3A0%26mh%3D265c217cb3d865bee6085af667c78e19%26frmn%3D%26ul%3Dhttp%253A%252F%252Fwww.47news.jp%252Fnews%252Fpolitics%252Felection%252Fsanin2013%252Findex.html%26rful%3Dhttp%253A%252F%252Fwww.47news.jp%252Fnews%252Fpolitics%252F%26et%3D2&targetTAG=_blank"><param name="base" value=".">');
+    document.write('<param name="bgcolor" value="">');
+    document.write('<param name="codetype" value="application/x-shockwave-flash">');
+    document.write('<param name="border" value="0"><param name="frameborder" value="0">');
+    document.write('<param name="wmode" value="opaque">');
+    document.write('<param name="type" value="application/x-shockwave-flash">');
+
+    document.write('<embed src=\"http://cre.adjust-net.jp/pc/1e/96/2004511.swf\" pluginspage=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5\" width=\"300\" height=\"250\" border=\"0\" frameborder=\"0\" type=\"application/x-shockwave-flash\" swliveconnect=\"true\" play=\"true\" loop=\"true\" menu=\"false\" quality=\"high\" scale=\"showall\" align=\"t\" salign=\"t\" flashvars=\"clickTAG=http%3A%2F%2Fads.adjust-net.jp%2Fadfrontserver%2Fclick%3Fsi%3D81b4e24e8a6b483481c2e7f5c6df24f7%26rv%3D2%26ard%3Dlv%3A3%7Cst%3A488%7Cfr%3A2000416%7Cfp%3A1%7Cpl%3A2000949%7Cmn%3A2003399%7Ccv%3A2014035%7Cat%3A1%7Cast%3A4%7Cnuf%3A0%7Cui%3A2deafc2f25d0494cb70d1060aa27577d%7Coof%3A0%7Ctt%3A1%7Cjsf%3A1%7Cgi%3A3%7Cmgi%3A0%7Cbd%3A2006840%7Cai%3A24%7Cmai%3A0%7Csm%3AD10900_12365%2CD10900_12377%2CD10900_12778%2CD10900_12806%7Cmsm%3A%7Cpc%3A%7Cmpc%3A%7Cft%3A9%7Cdm%3A%7Cmdm%3A%7Clm%3A%7Cmlm%3A%7Casm%3A%7Cmasm%3A%7Cafsd%3Aocn.ne.jp%7Cafsreg%3A4%7Cafsh%3A783%7Cafsw%3A1375%7Cafsifr%3A0%26mh%3D265c217cb3d865bee6085af667c78e19%26frmn%3D%26ul%3Dhttp%253A%252F%252Fwww.47news.jp%252Fnews%252Fpolitics%252Felection%252Fsanin2013%252Findex.html%26rful%3Dhttp%253A%252F%252Fwww.47news.jp%252Fnews%252Fpolitics%252F%26et%3D2&targetTAG=_blank\" base=\".\" bgcolor=\"\" codetype=\"application/x-shockwave-flash\" autostart=\"true\" wmode=\"opaque\"></embed>');
+    document.write('</object>');
+    document.write('<img style=\"position:absolute;\" src=\"http://ads.adjust-net.jp/adfrontserver/impbcn?si=81b4e24e8a6b483481c2e7f5c6df24f7&rv=2&ard=lv:3|st:488|fr:2000416|fp:1|pl:2000949|mn:2003399|cv:2014035|at:1|ast:4|nuf:0|ui:2deafc2f25d0494cb70d1060aa27577d|oof:0|tt:1|jsf:1|gi:3|mgi:0|bd:2006840|ai:24|mai:0|sm:D10900_12365,D10900_12377,D10900_12778,D10900_12806|msm:|pc:|mpc:|ft:9|dm:|mdm:|lm:|mlm:|asm:|masm:|afsd:ocn.ne.jp|afsreg:4|afsh:783|afsw:1375|afsifr:0&mh=265c217cb3d865bee6085af667c78e19&frmn=&ul=http%3A%2F%2Fwww.47news.jp%2Fnews%2Fpolitics%2Felection%2Fsanin2013%2Findex.html&rful=http%3A%2F%2Fwww.47news.jp%2Fnews%2Fpolitics%2F&et=1\" border=\"0\" width=\"1\" height=\"1\" />');
+} else {
+    document.write('<a href=\"' + unescape('http%3A%2F%2Fads.adjust-net.jp%2Fadfrontserver%2Fclick%3Fsi%3D81b4e24e8a6b483481c2e7f5c6df24f7%26rv%3D2%26ard%3Dlv%3A3%7Cst%3A488%7Cfr%3A2000416%7Cfp%3A1%7Cpl%3A2000949%7Cmn%3A2003399%7Ccv%3A2014035%7Cat%3A1%7Cast%3A4%7Cnuf%3A0%7Cui%3A2deafc2f25d0494cb70d1060aa27577d%7Coof%3A0%7Ctt%3A1%7Cjsf%3A1%7Cgi%3A3%7Cmgi%3A0%7Cbd%3A2006840%7Cai%3A24%7Cmai%3A0%7Csm%3AD10900_12365%2CD10900_12377%2CD10900_12778%2CD10900_12806%7Cmsm%3A%7Cpc%3A%7Cmpc%3A%7Cft%3A9%7Cdm%3A%7Cmdm%3A%7Clm%3A%7Cmlm%3A%7Casm%3A%7Cmasm%3A%7Cafsd%3Aocn.ne.jp%7Cafsreg%3A4%7Cafsh%3A783%7Cafsw%3A1375%7Cafsifr%3A0%26mh%3D265c217cb3d865bee6085af667c78e19%26frmn%3D%26ul%3Dhttp%253A%252F%252Fwww.47news.jp%252Fnews%252Fpolitics%252Felection%252Fsanin2013%252Findex.html%26rful%3Dhttp%253A%252F%252Fwww.47news.jp%252Fnews%252Fpolitics%252F%26et%3D2')+'\" target=\"_blank\" onmouseover=\"window.status=\'\'; return true;\"><img src=\"http://cre.adjust-net.jp/pc/1e/96/2004511a.gif\" width=\"300\" height=\"250\" alt=\"\" title=\"\" border=\"0\"/></a>');
+    document.write('<img style=\"position:absolute;\" src=\"http://ads.adjust-net.jp/adfrontserver/impbcn?si=81b4e24e8a6b483481c2e7f5c6df24f7&rv=2&ard=lv:3|st:488|fr:2000416|fp:1|pl:2000949|mn:2003399|cv:2014035|at:1|ast:4|nuf:0|ui:2deafc2f25d0494cb70d1060aa27577d|oof:0|tt:1|jsf:1|gi:3|mgi:0|bd:2006840|ai:24|mai:0|sm:D10900_12365,D10900_12377,D10900_12778,D10900_12806|msm:|pc:|mpc:|ft:9|dm:|mdm:|lm:|mlm:|asm:|masm:|afsd:ocn.ne.jp|afsreg:4|afsh:783|afsw:1375|afsifr:0&mh=265c217cb3d865bee6085af667c78e19&frmn=&ul=http%3A%2F%2Fwww.47news.jp%2Fnews%2Fpolitics%2Felection%2Fsanin2013%2Findex.html&rful=http%3A%2F%2Fwww.47news.jp%2Fnews%2Fpolitics%2F&et=1\" border=\"0\" width=\"1\" height=\"1\" />');
+}
